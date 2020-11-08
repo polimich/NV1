@@ -64,12 +64,16 @@ namespace NV1.Model
             {
                 return null;
             }
-            
-            
+
+
         }
         public override string ToString()
         {
             return Jmeno + " " + Pohlavi.ToString() + " " + Vek.ToString();
+        }
+        public Osoba Starnuti(int rok)
+        {
+            return getInstance(this.Vek + rok, this.Pohlavi, this.Jmeno);
         }
     }
 }
