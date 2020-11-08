@@ -9,18 +9,11 @@ namespace NV1
         {
             int vek;
             string jmeno;
-            bool pohlavi;
+            Pohlavi pohlavi;
             Console.WriteLine("Zadejte Jmeno");
             jmeno = Console.ReadLine();
             Console.WriteLine("Zadejte pohlavi(0 - muz, 1 - zena)");
-            if (int.Parse(Console.ReadLine()) == 1)
-            {
-                pohlavi = true;
-            }
-            else
-            {
-                pohlavi = false;
-            }
+            pohlavi = (Pohlavi)int.Parse(Console.ReadLine());
             Console.WriteLine("Zadejte vek");
             vek = int.Parse(Console.ReadLine());
             var osoba = Osoba.getInstance(vek, pohlavi, jmeno);

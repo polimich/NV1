@@ -6,13 +6,13 @@ namespace NV1.Model
 {
     public class Predskolak : Osoba
     {
-        public Predskolak(int vek, bool pohlavi, string jmeno) : base(vek, pohlavi, jmeno)
+        public Predskolak(int vek, Pohlavi pohlavi, string jmeno) : base(vek, pohlavi, jmeno)
         {
 
         }
         public override string ToString()
         {
-            return base.ToString() + "Předškolák";
+            return base.ToString() + " Předškolák";
         }
     }
 }

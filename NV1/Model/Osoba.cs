@@ -4,10 +4,15 @@ using System.Text;
 
 namespace NV1.Model
 {
+    public enum Pohlavi
+    {
+        Muž,
+        Žena
+    }
     public class Osoba
     {
         private readonly int _vek;
-        private readonly bool _pohlavi; //0 - muz 1 - zena
+        private readonly Pohlavi _pohlavi; //0 - muz 1 - zena
         private readonly string _jmeno;
         public int Vek
         {
@@ -16,7 +21,7 @@ namespace NV1.Model
                 return _vek;
             }
         }
-        public bool Pohlavi
+        public Pohlavi Pohlavi
         {
             get
             {
@@ -30,13 +35,13 @@ namespace NV1.Model
                 return _jmeno;
             }
         }
-        protected Osoba(int vek, bool pohlavi, string jmeno)
+        protected Osoba(int vek, Pohlavi pohlavi, string jmeno)
         {
             _jmeno = jmeno;
             _vek = vek;
             _pohlavi = pohlavi;
         }
-        public static Osoba getInstance(int vek, bool pohlavi, string jmeno)
+        public static Osoba getInstance(int vek, Pohlavi pohlavi, string jmeno)
         {
             Osoba osoba = new Osoba(vek, pohlavi, jmeno);
             if (osoba.Vek > 0)
@@ -64,7 +69,7 @@ namespace NV1.Model
         }
         public override string ToString()
         {
-            return Jmeno + Pohlavi.ToString() + Vek.ToString();
+            return Jmeno + " " + Pohlavi.ToString() + " " + Vek.ToString();
         }
     }
 }
